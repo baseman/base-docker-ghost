@@ -26,9 +26,9 @@ Once base-vagrant-docker-node docker image is configured replace Docker file fro
 
     sudo docker run -d -p <host_port>:2368 baseman/ghost
 
-### Other Docker Commands
+## Other Docker Commands
 
-- Bind data volumes to a running instance of docker
+#### Bind data volumes to a running instance of docker
 
     sudo docker run -v /vagrant/Ghost/content/images -v /vagrant/Ghost/content/data -name ghost-data baseman/node /bin/sh
 
