@@ -24,7 +24,7 @@ Once base-vagrant-docker-node docker image is configured replace Docker file fro
 
 ## Running a docker container
 
-    sudo docker run -d -p 8080:8080 baseman/ghost
+    sudo docker run -d -p <host_port>:2368 baseman/ghost
 
 ### Other Docker Commands
 
@@ -32,4 +32,4 @@ Once base-vagrant-docker-node docker image is configured replace Docker file fro
 
     sudo docker run -v /vagrant/Ghost/content/images -v /vagrant/Ghost/content/data -name ghost-data baseman/node /bin/sh
 
-    sudo docker run -d -i -t -p 8080:8080 -volumes-from ghost-data <your-name>/node /bin/bash
+    sudo docker run -d -i -t -p <host_port>:2368 -volumes-from ghost-data <your-name>/node /bin/bash
