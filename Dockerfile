@@ -20,6 +20,7 @@ RUN unzip -uo /tmp/ghost-0.4.0.zip -d /ghost
 # RUN npm install sqlite3 --build-from-source
 
 # Install Ghost
+ADD ./config.example.js /ghost/config.example.js
 RUN sed -i -e 's/127.0.0.1/0.0.0.0/g' /ghost/config.example.js
 
 RUN npm install --production
