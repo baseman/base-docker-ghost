@@ -7,11 +7,11 @@ RUN apt-get install wget
 RUN apt-get install -y unzip
 
 WORKDIR /tmp
-RUN wget http://ghost.org/zip/ghost-latest.zip
+RUN wget https://ghost.org/archives/ghost-0.4.0.zip
 RUN mkdir /ghost
 
 WORKDIR /ghost
-RUN unzip -uo /tmp/ghost-latest.zip -d /ghost
+RUN unzip -uo /tmp/ghost-0.4.0.zip -d /ghost
 
 # To manually build Ghost, uncomment this instead
 # sudo apt-get install git
