@@ -1,17 +1,20 @@
 # DOCKER-VERSION 0.7.0
 
-FROM baseman/node
+FROM node
 
 # Install Ghost
-RUN apt-get install wget
+
+RUN apt-get update
+
+RUN apt-get install -y wget
 RUN apt-get install -y unzip
 
 WORKDIR /tmp
-RUN wget https://ghost.org/archives/ghost-0.4.0.zip
+RUN wget https://ghost.org/archives/ghost-0.4.2.zip
 RUN mkdir /ghost
 
 WORKDIR /ghost
-RUN unzip -uo /tmp/ghost-0.4.0.zip -d /ghost
+RUN unzip -uo /tmp/ghost-0.4.2.zip -d /ghost
 
 # To manually build Ghost, uncomment this instead
 # sudo apt-get install git
