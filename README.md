@@ -33,6 +33,7 @@ Once base-vagrant-docker-node docker image is configured replace Docker file fro
     sudo docker run [-v <Mountable Volumes>] baseman/ghost-dev npm start
 
 Mountable Volumes:
+
     -v %GHOST-DEV-PATH%/content/apps:/ghost/content/apps
 
     -v %GHOST-DEV-PATH%/content/themes:/ghost/content/themes
