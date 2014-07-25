@@ -40,6 +40,8 @@ Mountable Volumes:
 
     -v %GHOST-DEV-PATH%/core/client:/ghost/core/client
 
+    -v %GHOST-DEV-PATH%/core/shared:/ghost/core/shared
+
 Eg.
 
-    sudo docker run -d -p 80:2368 -v %GHOST-DEV-PATH%/content/apps:/ghost/content/apps -v %GHOST-DEV-PATH%/content/themes:/ghost/content/themes -v %GHOST-DEV-PATH%/core/client:/ghost/core/client -v baseman/ghost-dev npm start
+    sudo docker run -d -p 80:2368 -v %GHOST-DEV-PATH%/content/apps:/ghost/content/apps -v %GHOST-DEV-PATH%/content/themes:/ghost/content/themes -v %GHOST-DEV-PATH%/core/client:/ghost/core/client -v %GHOST-DEV-PATH%/core/shared:/ghost/core/shared baseman/ghost-dev npm start
