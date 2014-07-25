@@ -30,6 +30,17 @@ Once base-vagrant-docker-node docker image is configured replace Docker file fro
 
 #### Bind data volumes to a running instance of docker
 
-    sudo docker run -v /vagrant/Ghost/content/images -v /vagrant/Ghost/content/data -name ghost-data baseman/node /bin/sh
+    sudo docker run [-v <Mountable Volumes>] baseman/ghost-dev npm start
 
-    sudo docker run -d -i -t -p <host_port>:2368 -volumes-from ghost-data <your-name>/node /bin/bash
+Mountable Volumes:
+    -v /Users/Shared/dev/git/Ghost/content/apps:/ghost/content/apps
+
+    -v /Users/Shared/dev/git/Ghost/content/themes:/ghost/content/themes
+
+    -v /Users/Shared/dev/git/Ghost/core/client:/ghost/core/client
+
+    -v /Users/Shared/dev/git/Ghost/core/shared:/ghost/core/shared
+
+Eg.
+
+    sudo docker run -d -p 80:2368 -v /Users/Shared/dev/git/Ghost/content/apps:/ghost/content/apps -v /Users/Shared/dev/git/Ghost/content/themes:/ghost/content/themes -v /Users/Shared/dev/git/Ghost/content/themes:/ghost/content/themes -v /Users/Shared/dev/git/Ghost/core:/ghost/core  -v /Users/Shared/dev/git/Ghost/core/client:/ghost/core/client -v /Users/Shared/dev/git/Ghost/core/shared:/ghost/core/shared baseman/ghost-dev npm start
